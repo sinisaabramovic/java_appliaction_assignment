@@ -15,18 +15,6 @@ import java.util.Locale;
 
 public class Main {
 
-    /*
-    Blue print
-    {"Broj tečajnice":"204","
-    Datum primjene":"24.10.2018",
-    "Država":"Australija",
-    "Šifra valute":"036",
-    "Valuta":"AUD",
-    "Jedinica":1,
-    "Kupovni za devize":"4,567061",
-    "Srednji za devize":"4,580803",
-    "Prodajni za devize":"4,594545"}
-    */
     public static void main(String[] args) {
 	// write your code here
 
