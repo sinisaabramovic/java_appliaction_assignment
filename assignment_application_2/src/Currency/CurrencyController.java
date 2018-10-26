@@ -57,18 +57,19 @@ public class CurrencyController {
 
             BufferedReader in = new BufferedReader(new InputStreamReader(request.getInputStream()));
             String inputLine = "";
-            Currency currency = new Currency();
-            while ((inputLine = in.readLine()) != null) {
-                JSONArray a = (JSONArray) parser.parse(inputLine);
 
-                for (Object o : a) {
-                    JSONObject jsonObject = (JSONObject) o;
+            while ((inputLine = in.readLine()) != null) {
+                JSONArray jsonArray = (JSONArray) parser.parse(inputLine);
+
+                for (Object object : jsonArray) {
+                    JSONObject jsonObject = (JSONObject) object;
+                    Currency currency = new Currency();
 
                     currency.setCurrencyNum(new BaseEntity("Broj tečajnice", (String) jsonObject.get("Broj tečajnice"), null));
                     currency.setDate(new BaseEntity("Datum primjene", (String) jsonObject.get("Datum primjene"), null));
                     currency.setState(new BaseEntity("Država", (String) jsonObject.get("Država"), null));
                     currency.setCurrencyCode(new BaseEntity("Valuta", (String) jsonObject.get("Valuta"), null));
-                    currency.setUnit(new BaseEntity("Jedinicae", (Long) jsonObject.get("Jedinica")));
+                    currency.setUnit(new BaseEntity("Jedinica", (Long) jsonObject.get("Jedinica")));
                     currency.setCurrencyForBuy(new BaseEntity("Kupovni za devize", (String) jsonObject.get("Kupovni za devize"), null));
                     currency.setMiddleForCurrency(new BaseEntity("Srednji za devize", (String) jsonObject.get("Srednji za devize"), null));
                     currency.setSellForCurrency(new BaseEntity("Prodajni za devize", (String) jsonObject.get("Prodajni za devize"), null));
