@@ -22,7 +22,7 @@ public class Main {
         UsersController usersController = UsersController.getInstance();
 
         String dataFilePath;
-        dataFilePath = "/Users/sinisaabramovic/Java/Java/assignment_application/data/podaci.txt";
+        dataFilePath = "data/podaci.txt";
 
         usersController.importUsers(dataFilePath);
         usersController.printUsers();
