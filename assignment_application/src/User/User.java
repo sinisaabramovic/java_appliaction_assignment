@@ -51,7 +51,7 @@ public class User extends BaseUser {
         StringBuilder stringBuilder = new StringBuilder();
         String extraSpace = " ";
         String eolStr = "\n";
-
+        stringBuilder.append("User: " + eolStr);
         stringBuilder.append("id:" + extraSpace + getId() + eolStr);
         stringBuilder.append("status:" + extraSpace + getStatus().getValue() + eolStr);
         stringBuilder.append("stanje:" + extraSpace + getFinancialStatus().toString() + eolStr);
@@ -62,7 +62,7 @@ public class User extends BaseUser {
         stringBuilder.append("email:" + extraSpace + geteMailAdress() + eolStr);
         stringBuilder.append("telefon:" + extraSpace + getTelephoneNumber() + eolStr);
         stringBuilder.append("adresa:" + extraSpace + getAdress().toString() + eolStr);
-
+        stringBuilder.append("End of user data" + eolStr);
 
         return stringBuilder.toString();
     }

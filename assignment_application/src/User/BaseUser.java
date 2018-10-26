@@ -3,18 +3,6 @@ import java.util.Currency;
 import User.UserEnums.Gender;
 import User.UserEnums.Status;
 
-/*
-       "id": "_5",
-       "status": "aktivan",
-       "stanje": "4.271,55 HRK",
-       "dob": "33 god",
-       "naziv": "Juliette Lancaster",
-       "spol": "female",
-       "tvrtka": "QUARMONY",
-       "email": "juliettelancaster@quarmony.com",
-       "telefon": "+385 (809) 531-2704",
-       "adresa": "339 Coffey Street, Neahkahnie, Virginia, 8640"
-     */
 class BaseUser {
 
     private int id = 0;
