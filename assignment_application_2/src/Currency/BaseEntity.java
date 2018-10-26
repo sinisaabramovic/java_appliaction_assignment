@@ -1,5 +1,6 @@
 package Currency;
 
+// To ensure key - value pairs for single interface property
 
 public class BaseEntity{
     public String key;

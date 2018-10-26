@@ -1,5 +1,7 @@
 package Currency;
 
+// Base class that provide property interface for currency data manipulation
+
 public class Currency {
     private BaseEntity currencyNum;
     private BaseEntity date;
@@ -84,6 +86,7 @@ public class Currency {
         this.unit.value = unit.longValue.toString();
     }
 
+    // Abstract override for console output
     @Override
     public String toString(){
         StringBuilder stringBuilder = new StringBuilder();

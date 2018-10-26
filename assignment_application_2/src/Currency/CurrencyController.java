@@ -14,6 +14,8 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+// Base controller for handles currencies
+
 public class CurrencyController {
     private static CurrencyController ourInstance = new CurrencyController();
 
@@ -39,6 +41,8 @@ public class CurrencyController {
         currencies = new ArrayList<Currency>();
         parser = new JSONParser();
 
+        // One of the possible solution is to collect all keys in one container, for now I use different approach
+        // that use property instances
         //entityKeys.add("Broj tečajnice");
         //entityKeys.add("Datum primjene");
         //entityKeys.add("Država");

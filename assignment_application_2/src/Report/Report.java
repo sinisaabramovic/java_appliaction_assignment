@@ -4,6 +4,8 @@ import java.io.*;
 import java.util.List;
 import Currency.Currency;
 
+// Base Report class
+
 public class Report {
 
     private static Report ourInstance = new Report();
@@ -28,7 +30,7 @@ public class Report {
             bw.newLine();
             bw.write("<body>");
             bw.newLine();
-            bw.write("<h1>Report</h1>");
+            bw.write("<h1>Data Report</h1>");
             bw.newLine();
             bw.write("<table>");
             bw.newLine();
@@ -83,7 +85,7 @@ public class Report {
             bw.close();
 
         }catch (Exception ex){
-
+            System.out.println(ex.toString());
         }
     }
 }
