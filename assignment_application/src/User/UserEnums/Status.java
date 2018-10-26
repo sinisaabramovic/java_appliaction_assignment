@@ -1,4 +1,4 @@
-package UserEnums;
+package User.UserEnums;
 
 public enum Status {
     ACTIVE("active"),

@@ -1,6 +1,7 @@
 package com.example.java;
 import User.User;
-import UserEnums.Gender;
+import User.UserEnums.Gender;
+import User.UserEnums.Status;
 
 public class Main {
 

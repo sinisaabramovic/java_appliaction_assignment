@@ -1,7 +1,7 @@
 package User;
 
-import UserEnums.Gender;
-import UserEnums.Status;
+import User.UserEnums.Gender;
+import User.UserEnums.Status;
 
 public class User extends BaseUser {
 
