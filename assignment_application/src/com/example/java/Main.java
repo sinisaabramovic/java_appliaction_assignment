@@ -24,10 +24,10 @@ public class Main {
         try {
             InputStream input = new FileInputStream(dataFile);
 
-            myUser.setNameAndSurName(new Name("Pero", "", "Kona"));
-            myUser.setGender(Gender.MALE);
-            myUser.setFinancialStatus(new Account(Locale.UK, 2103.45));
-            myUser.setStatus(Status.ACTIVE);
+            //myUser.setNameAndSurName(new Name("Pero", "", "Kona"));
+            //myUser.setGender(Gender.MALE);
+            //myUser.setFinancialStatus(new Account(Locale.UK, 2103.45));
+            //myUser.setStatus(Status.ACTIVE);
             System.out.println("Debug user : \n" + myUser.toString());
 
         }catch(FileNotFoundException exception) {

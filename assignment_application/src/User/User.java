@@ -16,6 +16,7 @@ public class User extends BaseUser {
         this.setFinancialStatus(new Account(Locale.US, 0.0));
         this.setGender(Gender.NONE);
         this.setId(0);
+        this.setStatus(Status.IDLE);
     }
 
     public User(int _id, Status _status, Account _financialStatus, int _age, Name _nameAndSurName, Gender _gender, String _companyName, String _email, String _telephoneNumber, Adress _adress){
@@ -32,7 +33,6 @@ public class User extends BaseUser {
         this.setAdress(_adress);
 
     }
-
 
     /*
            "id": "_5",
