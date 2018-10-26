@@ -1,39 +1,5 @@
 package Currency;
 
-    /*
-    Blue print
-    {"Broj tečajnice":"204","
-    Datum primjene":"24.10.2018",
-    "Država":"Australija",
-    "Šifra valute":"036",
-    "Valuta":"AUD",
-    "Jedinica":1,
-    "Kupovni za devize":"4,567061",
-    "Srednji za devize":"4,580803",
-    "Prodajni za devize":"4,594545"}
-    */
-class BaseEntity{
-    String key;
-    String value;
-    Long longValue;
-
-    public BaseEntity(){
-
-    }
-
-    public BaseEntity(String _key, String _value, Long _longValue){
-        this.value = _value;
-        this.key = _key;
-        this.longValue = _longValue;
-    }
-
-        public BaseEntity(String _key, Long _value){
-            this.value = "";
-            this.key = _key;
-            this.longValue = _value;
-        }
-}
-
 public class Currency {
     private BaseEntity currencyNum;
     private BaseEntity date;

@@ -26,6 +26,10 @@ public class CurrencyController {
     private List<Currency> currencies;
     private JSONParser parser;
 
+    public List<Currency> getCurrencies() {
+        return currencies;
+    }
+
     private void addCurrency(Currency currency){
         currencies.add(currency);
     }
@@ -95,4 +99,6 @@ public class CurrencyController {
             System.out.println(currency.toString());
         }
     }
+
+
 }
