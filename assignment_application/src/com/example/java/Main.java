@@ -1,9 +1,16 @@
 package com.example.java;
 
+import User.User;
+
 public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        System.out.println("OK Lets GO!");
+
+        User myUser = new User();
+
+        myUser.setNameAndSurName("Pero");
+
+        System.out.println("OK Lets GO! " + myUser.getNameAndSurName());
     }
 }
