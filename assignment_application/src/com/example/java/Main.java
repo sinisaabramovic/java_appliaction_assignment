@@ -19,7 +19,5 @@ public class Main {
         usersController.printUsers();
 
         System.out.println("Program ended \n");
-
     }
-
 }

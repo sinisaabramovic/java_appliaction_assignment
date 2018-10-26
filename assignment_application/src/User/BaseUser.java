@@ -6,8 +6,9 @@ import User.UserSubClass.Adress;
 import User.UserSubClass.Age;
 import User.UserSubClass.Name;
 
-class BaseUser {
+// Base user class. Implements basic interface and properties
 
+class BaseUser {
     private int id = 0;
     private Status status;
     private Account financialStatus;
@@ -79,6 +80,5 @@ class BaseUser {
     public void seteMailAdress(String eMailAdress) {
             this.eMailAdress = eMailAdress;
         }
-
 }
 

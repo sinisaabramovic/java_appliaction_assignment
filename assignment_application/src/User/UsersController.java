@@ -9,6 +9,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
+// Main user controller
+
 public class UsersController {
     private static UsersController ourInstance = new UsersController();
 
@@ -28,6 +30,7 @@ public class UsersController {
         users.add(user);
     }
 
+    // Parse file (from path) to User objects
     private void Parse(String path){
         try {
             FileReader reader = new FileReader(path);
@@ -64,9 +67,7 @@ public class UsersController {
     }
 
     public void importUsers(String path){
-
         Parse(path);
-
     }
 
     public void printUsers(){
@@ -75,6 +76,5 @@ public class UsersController {
         for(User u : users){
             System.out.println(u.toString());
         }
-
     }
 }

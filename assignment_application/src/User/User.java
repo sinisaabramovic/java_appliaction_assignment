@@ -1,6 +1,4 @@
 package User;
-import java.util.Locale;
-
 import User.UserEnums.Gender;
 import User.UserEnums.Status;
 import User.UserSubClass.Account;
@@ -9,7 +7,7 @@ import User.UserSubClass.Age;
 import User.UserSubClass.Name;
 
 public class User extends BaseUser {
-
+    // Base constructor
     public User(){
         this.setNameAndSurName(new Name());
         this.setAdress(new Adress());
@@ -23,7 +21,6 @@ public class User extends BaseUser {
     }
 
     public User(int _id, Status _status, Account _financialStatus, Age _age, Name _nameAndSurName, Gender _gender, String _companyName, String _email, String _telephoneNumber, Adress _adress){
-
         this.setId(_id);
         this.setStatus(_status);
         this.setFinancialStatus(_financialStatus);
@@ -34,9 +31,9 @@ public class User extends BaseUser {
         this.seteMailAdress(_email);
         this.setTelephoneNumber(_telephoneNumber);
         this.setAdress(_adress);
-
     }
 
+    // Pairs key with value, using switch conditions
     public boolean insertKeyValue(String key, String value){
         switch (key){
             case "id":
@@ -160,12 +157,12 @@ public class User extends BaseUser {
                 }
 
                 break;
-
         }
 
         return true;
     }
 
+    // Overrides toString
      @Override
     public String toString(){
         StringBuilder stringBuilder = new StringBuilder();
@@ -182,7 +179,6 @@ public class User extends BaseUser {
         stringBuilder.append("email:" + extraSpace + geteMailAdress() + eolStr);
         stringBuilder.append("telefon:" + extraSpace + getTelephoneNumber() + eolStr);
         stringBuilder.append("adresa:" + extraSpace + getAdress().toString() + eolStr);
-        //stringBuilder.append("End of user data" + eolStr);
 
         return stringBuilder.toString();
     }
