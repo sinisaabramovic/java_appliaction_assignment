@@ -5,31 +5,31 @@ import java.util.Currency;
 import java.util.Locale;
 
 public class Account {
-    private Locale locale;
+    private String locale;
     private Currency currency;
-    private Double amount;
+    private String amount;
 
     public void Account(){
-        this.locale = null;
+        this.locale = "";
         this.currency = null;
-        this.amount = 0.0;
+        this.amount = "0.0";
     }
 
-    public Account(Locale _local, Double _amount){
+    public Account(String _local, String _amount){
         this.locale = _local;
         this.amount = _amount;
-        this.currency = Currency.getInstance(locale);
+        //this.currency = Currency.getInstance(locale);
     }
 
-    public Double getAmount(){
+    public String getAmount(){
         return this.amount;
     }
 
-    public void setAmount(Double amount) {
+    public void setAmount(String amount) {
         this.amount = amount;
     }
 
-    public Locale getLocale(){
+    public String getLocale(){
         return this.locale;
     }
 
@@ -39,6 +39,6 @@ public class Account {
 
     @Override
     public String toString(){
-        return amount.toString() + " " + currency.getCurrencyCode().toString();
+        return amount.toString() + " " + locale;
     }
 }

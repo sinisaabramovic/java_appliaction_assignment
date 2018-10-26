@@ -16,7 +16,7 @@ public class User extends BaseUser {
         this.setAge(new Age(0,""));
         this.setCompanyName("");
         this.seteMailAdress("");
-        this.setFinancialStatus(new Account(Locale.US, 0.0));
+        this.setFinancialStatus(new Account("HRK", "0.0"));
         this.setGender(Gender.NONE);
         this.setId(0);
         this.setStatus(Status.IDLE);
@@ -60,8 +60,8 @@ public class User extends BaseUser {
                 break;
             case "stanje":
                 try {
-
-                    //this.setFinancialStatus(new Account(locale, Double.parseDouble(value)));
+                    String[] financialStatusValue = value.split(" ");
+                    this.setFinancialStatus(new Account(financialStatusValue[1], financialStatusValue[0]));
                 }catch (Exception ex){
                     System.out.println("Error in parse " + key);
                     System.out.println(ex.toString());
@@ -182,7 +182,7 @@ public class User extends BaseUser {
         stringBuilder.append("email:" + extraSpace + geteMailAdress() + eolStr);
         stringBuilder.append("telefon:" + extraSpace + getTelephoneNumber() + eolStr);
         stringBuilder.append("adresa:" + extraSpace + getAdress().toString() + eolStr);
-        stringBuilder.append("End of user data" + eolStr);
+        //stringBuilder.append("End of user data" + eolStr);
 
         return stringBuilder.toString();
     }

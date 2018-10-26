@@ -16,10 +16,8 @@ public class UsersController {
         return ourInstance;
     }
 
-    private String cdlPath;
     private List<User> users;
     private JSONParser jsonParser;
-    private UserView userView;
 
     private UsersController() {
         users = new ArrayList<User>();
@@ -72,10 +70,10 @@ public class UsersController {
     }
 
     public void printUsers(){
-        System.out.println("PRINT USERS " + users.size());
+        System.out.println("Print users \nTotal number of users :" + users.size() + "\n");
 
         for(User u : users){
-            userView.PrintUserDetails(u);
+            System.out.println(u.toString());
         }
 
     }
