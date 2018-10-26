@@ -16,6 +16,16 @@ class BaseEntity{
     String key;
     String value;
     Long longValue;
+
+    public BaseEntity(){
+
+    }
+
+    public BaseEntity(String _key, String _value, Long _longValue){
+        this.value = _value;
+        this.key = _key;
+        this.longValue = _longValue;
+    }
 }
 
 public class Currency {

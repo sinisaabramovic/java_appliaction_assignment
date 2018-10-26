@@ -35,14 +35,14 @@ public class CurrencyController {
         currencies = new ArrayList<Currency>();
         parser = new JSONParser();
 
-        entityKeys.add("Broj tečajnice");
-        entityKeys.add("Datum primjene");
-        entityKeys.add("Država");
-        entityKeys.add("Valuta");
-        entityKeys.add("Jedinica");
-        entityKeys.add("Kupovni za devize");
-        entityKeys.add("Srednji za devize");
-        entityKeys.add("Prodajni za devize");
+        //entityKeys.add("Broj tečajnice");
+        //entityKeys.add("Datum primjene");
+        //entityKeys.add("Država");
+        //entityKeys.add("Valuta");
+        //entityKeys.add("Jedinica");
+        //entityKeys.add("Kupovni za devize");
+        //entityKeys.add("Srednji za devize");
+        //entityKeys.add("Prodajni za devize");
 
     }
 
@@ -64,7 +64,6 @@ public class CurrencyController {
                 for (Object o : a) {
                     BaseEntity entity = new BaseEntity();
                     JSONObject jsonObject = (JSONObject) o;
-
                     //for (String key : entityKeys) {
                     //    entity.key = key;
                     //    entity.value = (String) jsonObject.get(entity.key);
@@ -110,4 +109,9 @@ public class CurrencyController {
 
     }
 
+    public void printCurrencies(){
+        for (Currency currency : currencies) {
+            System.out.println(currency.toString());
+        }
+    }
 }
