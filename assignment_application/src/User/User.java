@@ -155,7 +155,6 @@ public class User extends BaseUser {
                     System.out.println(ex.toString());
                     return false;
                 }
-
                 break;
         }
 

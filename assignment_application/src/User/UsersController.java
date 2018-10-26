@@ -67,6 +67,7 @@ public class UsersController {
     }
 
     public void importUsers(String path){
+        // Call for func. Parse and send it path
         Parse(path);
     }
 
