@@ -1,0 +1,62 @@
+[
+  {
+    "id": "_5",
+    "status": "aktivan",
+    "stanje": "4.271,55 HRK",
+    "dob": "33 god",
+    "naziv": "Juliette Lancaster",
+    "spol": "female",
+    "tvrtka": "QUARMONY",
+    "email": "juliettelancaster@quarmony.com",
+    "telefon": "+385 (809) 531-2704",
+    "adresa": "339 Coffey Street, Neahkahnie, Virginia, 8640"
+  },
+  {
+    "id": "1",
+    "status": "aktivan",
+    "stanje": "9.261,55 HRK",
+    "dob": "31 god",
+    "naziv": "Roseann Conley",
+    "spol": "female",
+    "tvrtka": "NETPLODE",
+    "email": "roseannconley@netplode.com",
+    "telefon": "+385 (858) 518-2421",
+    "adresa": "522 Greenwood Avenue, Blanco, North Carolina, 9723"
+  },
+  {
+    "id": "2",
+    "status": "aktivan",
+    "stanje": "6.777,55 HRK",
+    "dob": "30 god",
+    "naziv": "Yolanda Mckay",
+    "spol": "female",
+    "tvrtka": "NIKUDA",
+    "email": "yolandamckay@nikuda.com",
+    "telefon": "+385 (910) 546-3787",
+    "adresa": "982 Tapscott Street, Jenkinsville, Maryland, 6110"
+  },
+  {
+    "id": "3",
+    "status": "aktivan",
+    "stanje": "4.154,58 HRK",
+    "dob": "39 god",
+    "naziv": "Gross Farley",
+    "spol": "male",
+    "tvrtka": "ECLIPSENT",
+    "email": "grossfarley@eclipsent.com",
+    "telefon": "+385 (877) 475-2293",
+    "adresa": "328 Roebling Street, Ruckersville, Wyoming, 9504"
+  },
+  {
+    "id": "11",
+    "status": "aktivan",
+    "stanje": "4.251,55 HRK",
+    "dob": "19 god",
+    "naziv": "Pennington Nguyen",
+    "spol": "male",
+    "tvrtka": "SUSTENZA",
+    "email": "penningtonnguyen@sustenza.com",
+    "telefon": "+385 (886) 491-2554",
+    "adresa": "215 Macon Street, Bawcomville, Kentucky, 2304"
+  }
+]
