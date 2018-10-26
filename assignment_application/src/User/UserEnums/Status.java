@@ -1,8 +1,8 @@
 package User.UserEnums;
 
 public enum Status {
-    ACTIVE("active"),
-    NOACTIVE("no active"),
+    ACTIVE("aktivan"),
+    NOACTIVE("ne aktivan"),
     IDLE("idle");
 
     private String value;

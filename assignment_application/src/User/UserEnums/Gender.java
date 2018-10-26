@@ -1,5 +1,6 @@
 package User.UserEnums;
 
+// Enum for user gender
 public enum Gender {
     MALE("male"),
     FEMALE("female"),

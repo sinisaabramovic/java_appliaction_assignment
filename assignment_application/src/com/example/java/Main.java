@@ -19,6 +19,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         System.out.println("Program begin \n");
 
+        // Base user controller
         UsersController usersController = UsersController.getInstance();
 
         String dataFilePath;

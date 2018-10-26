@@ -70,10 +70,10 @@ public class User extends BaseUser {
                 break;
             case "status":
                 try {
-                    Status status = Status.IDLE;
-                    if(value == "aktivan"){
+                    Status status = Status.ACTIVE;
+                    if(value.equals("aktivan")) {
                         status = Status.ACTIVE;
-                    }else if(value == "ne aktivan"){
+                    } else if(value.equals("ne aktivan")){
                         status = Status.NOACTIVE;
                     }else {
                         status = Status.IDLE;
