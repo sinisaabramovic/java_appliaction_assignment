@@ -1,5 +1,5 @@
 package User;
-
+import java.util.Currency;
 import User.UserEnums.Gender;
 import User.UserEnums.Status;
 
@@ -19,7 +19,7 @@ class BaseUser {
 
     private int id = 0;
     private Status status;
-    private float financialStatus = 0;
+    private Account financialStatus;
     private int age = 0;
     private String nameAndSurName = "";
     private Gender gender = Gender.NONE;
@@ -40,10 +40,10 @@ class BaseUser {
     public void setStatus(Status status) {
             this.status = status;
         }
-    public float getFinancialStatus() {
+    public Account getFinancialStatus() {
             return financialStatus;
         }
-    public void setFinancialStatus(float financialStatus) {
+    public void setFinancialStatus(Account financialStatus) {
             this.financialStatus = financialStatus;
         }
     public int getAge() {
@@ -88,6 +88,10 @@ class BaseUser {
     public void seteMailAdress(String eMailAdress) {
             this.eMailAdress = eMailAdress;
         }
+
+    public void Account(){
+
+    }
 
 }
 
