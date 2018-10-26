@@ -15,6 +15,7 @@ package Currency;
 class BaseEntity{
     String key;
     String value;
+    Long longValue;
 }
 
 public class Currency {
@@ -98,6 +99,7 @@ public class Currency {
 
     public void setUnit(BaseEntity unit) {
         this.unit = unit;
+        this.unit.value = unit.longValue.toString();
     }
 
     @Override
