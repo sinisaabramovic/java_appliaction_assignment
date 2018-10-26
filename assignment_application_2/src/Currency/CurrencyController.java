@@ -62,36 +62,16 @@ public class CurrencyController {
                 JSONArray a = (JSONArray) parser.parse(inputLine);
 
                 for (Object o : a) {
-                    BaseEntity entity = new BaseEntity();
                     JSONObject jsonObject = (JSONObject) o;
-                    //for (String key : entityKeys) {
-                    //    entity.key = key;
-                    //    entity.value = (String) jsonObject.get(entity.key);
-                    //}
-                    entity.key = "Broj tečajnice";
-                    entity.value = (String) jsonObject.get(entity.key);
-                    currency.setCurrencyNum(entity);
-                    entity.key = "Datum primjene";
-                    entity.value = (String) jsonObject.get(entity.key);
-                    currency.setDate(entity);
-                    entity.key = "Država";
-                    entity.value = (String) jsonObject.get(entity.key);
-                    currency.setState(entity);
-                    entity.key = "Valuta";
-                    entity.value = (String) jsonObject.get(entity.key);
-                    currency.setCurrencyCode(entity);
-                    entity.key = "Jedinica";
-                    entity.longValue = (Long) jsonObject.get(entity.key);
-                    currency.setUnit(entity);
-                    entity.key = "Kupovni za devize";
-                    entity.value = (String) jsonObject.get(entity.key);
-                    currency.setCurrencyForBuy(entity);
-                    entity.key = "Srednji za devize";
-                    entity.value = (String) jsonObject.get(entity.key);
-                    currency.setMiddleForCurrency(entity);
-                    entity.key = "Prodajni za devize";
-                    entity.value = (String) jsonObject.get(entity.key);
-                    currency.setSellForCurrency(entity);
+
+                    currency.setCurrencyNum(new BaseEntity("Broj tečajnice", (String) jsonObject.get("Broj tečajnice"), null));
+                    currency.setDate(new BaseEntity("Datum primjene", (String) jsonObject.get("Datum primjene"), null));
+                    currency.setState(new BaseEntity("Država", (String) jsonObject.get("Država"), null));
+                    currency.setCurrencyCode(new BaseEntity("Valuta", (String) jsonObject.get("Valuta"), null));
+                    currency.setUnit(new BaseEntity("Jedinicae", (Long) jsonObject.get("Jedinica")));
+                    currency.setCurrencyForBuy(new BaseEntity("Kupovni za devize", (String) jsonObject.get("Kupovni za devize"), null));
+                    currency.setMiddleForCurrency(new BaseEntity("Srednji za devize", (String) jsonObject.get("Srednji za devize"), null));
+                    currency.setSellForCurrency(new BaseEntity("Prodajni za devize", (String) jsonObject.get("Prodajni za devize"), null));
 
                     addCurrency(currency);
                 }

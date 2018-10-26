@@ -26,6 +26,12 @@ class BaseEntity{
         this.key = _key;
         this.longValue = _longValue;
     }
+
+        public BaseEntity(String _key, Long _value){
+            this.value = "";
+            this.key = _key;
+            this.longValue = _value;
+        }
 }
 
 public class Currency {
