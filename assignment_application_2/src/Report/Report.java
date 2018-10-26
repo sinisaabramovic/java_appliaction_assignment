@@ -5,7 +5,6 @@ import java.util.List;
 import Currency.Currency;
 
 // Base Report class
-
 public class Report {
 
     private static Report ourInstance = new Report();

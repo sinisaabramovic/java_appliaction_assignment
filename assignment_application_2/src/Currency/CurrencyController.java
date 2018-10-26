@@ -1,5 +1,10 @@
 package Currency;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -8,11 +13,6 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
-import Currency.Currency;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
 // Base controller for handles currencies
 
@@ -51,7 +51,6 @@ public class CurrencyController {
         //entityKeys.add("Kupovni za devize");
         //entityKeys.add("Srednji za devize");
         //entityKeys.add("Prodajni za devize");
-
     }
 
     public void importCurrencies(String url){
@@ -95,7 +94,6 @@ public class CurrencyController {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
     }
 
     public void printCurrencies(){
@@ -103,6 +101,4 @@ public class CurrencyController {
             System.out.println(currency.toString());
         }
     }
-
-
 }
