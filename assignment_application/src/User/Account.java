@@ -29,7 +29,8 @@ public class Account {
         this.currency = currency;
     }
 
-    public String status(){
+    @Override
+    public String toString(){
         return amount.toString() + " " + currency.getCurrencyCode().toString();
     }
 }

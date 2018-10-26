@@ -21,12 +21,12 @@ class BaseUser {
     private Status status;
     private Account financialStatus;
     private int age = 0;
-    private String nameAndSurName = "";
+    private Name nameAndSurName;
     private Gender gender = Gender.NONE;
     private String companyName = "";
     private String eMailAdress = "";
     private String telephoneNumber = "";
-    private String Adress = "";
+    private Adress Adress;
 
     public int getId() {
         return id;
@@ -52,10 +52,10 @@ class BaseUser {
     public void setAge(int age) {
             this.age = age;
         }
-    public String getNameAndSurName() {
+    public Name getNameAndSurName() {
             return nameAndSurName;
         }
-    public void setNameAndSurName(String nameAndSurName) {
+    public void setNameAndSurName(Name nameAndSurName) {
             this.nameAndSurName = nameAndSurName;
         }
     public Gender getGender() {
@@ -73,7 +73,7 @@ class BaseUser {
     public String geteMailAdress() {
             return eMailAdress;
         }
-    public void setAdress(String adress) {
+    public void setAdress(Adress adress) {
             Adress = adress;
         }
     public String getTelephoneNumber() {
@@ -82,7 +82,7 @@ class BaseUser {
     public void setTelephoneNumber(String telephoneNumber) {
             this.telephoneNumber = telephoneNumber;
         }
-    public String getAdress() {
+    public Adress getAdress() {
             return Adress;
         }
     public void seteMailAdress(String eMailAdress) {
