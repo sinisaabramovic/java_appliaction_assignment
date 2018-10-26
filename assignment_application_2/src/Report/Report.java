@@ -24,6 +24,8 @@ public class Report {
             BufferedWriter bw = new BufferedWriter(new FileWriter(f));
             bw.write("<html>");
             bw.newLine();
+            bw.write("<head><meta charset=\"UTF-8\"></head>");
+            bw.newLine();
             bw.write("<body>");
             bw.newLine();
             bw.write("<h1>Report</h1>");
