@@ -1,4 +1,6 @@
-package User;
+package User.UserSubClass;
+
+import User.User;
 
 public class Name {
     private String name;

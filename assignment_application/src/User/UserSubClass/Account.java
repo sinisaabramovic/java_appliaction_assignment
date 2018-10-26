@@ -1,4 +1,6 @@
-package User;
+package User.UserSubClass;
+import User.User;
+
 import java.util.Currency;
 import java.util.Locale;
 
@@ -6,6 +8,12 @@ public class Account {
     private Locale locale;
     private Currency currency;
     private Double amount;
+
+    public void Account(){
+        this.locale = null;
+        this.currency = null;
+        this.amount = 0.0;
+    }
 
     public Account(Locale _local, Double _amount){
         this.locale = _local;

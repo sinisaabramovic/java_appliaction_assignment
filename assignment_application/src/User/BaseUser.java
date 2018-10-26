@@ -1,14 +1,17 @@
 package User;
-import java.util.Currency;
 import User.UserEnums.Gender;
 import User.UserEnums.Status;
+import User.UserSubClass.Account;
+import User.UserSubClass.Adress;
+import User.UserSubClass.Age;
+import User.UserSubClass.Name;
 
 class BaseUser {
 
     private int id = 0;
     private Status status;
     private Account financialStatus;
-    private int age = 0;
+    private Age age;
     private Name nameAndSurName;
     private Gender gender = Gender.NONE;
     private String companyName = "";
@@ -34,10 +37,10 @@ class BaseUser {
     public void setFinancialStatus(Account financialStatus) {
             this.financialStatus = financialStatus;
         }
-    public int getAge() {
+    public Age getAge() {
             return age;
         }
-    public void setAge(int age) {
+    public void setAge(Age age) {
             this.age = age;
         }
     public Name getNameAndSurName() {
@@ -76,10 +79,6 @@ class BaseUser {
     public void seteMailAdress(String eMailAdress) {
             this.eMailAdress = eMailAdress;
         }
-
-    public void Account(){
-
-    }
 
 }
 

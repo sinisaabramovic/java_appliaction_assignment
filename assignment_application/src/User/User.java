@@ -1,16 +1,19 @@
 package User;
-import java.util.Currency;
 import java.util.Locale;
 
 import User.UserEnums.Gender;
 import User.UserEnums.Status;
+import User.UserSubClass.Account;
+import User.UserSubClass.Adress;
+import User.UserSubClass.Age;
+import User.UserSubClass.Name;
 
 public class User extends BaseUser {
 
     public User(){
         this.setNameAndSurName(new Name());
         this.setAdress(new Adress());
-        this.setAge(0);
+        this.setAge(new Age(0,""));
         this.setCompanyName("");
         this.seteMailAdress("");
         this.setFinancialStatus(new Account(Locale.US, 0.0));
@@ -19,7 +22,7 @@ public class User extends BaseUser {
         this.setStatus(Status.IDLE);
     }
 
-    public User(int _id, Status _status, Account _financialStatus, int _age, Name _nameAndSurName, Gender _gender, String _companyName, String _email, String _telephoneNumber, Adress _adress){
+    public User(int _id, Status _status, Account _financialStatus, Age _age, Name _nameAndSurName, Gender _gender, String _companyName, String _email, String _telephoneNumber, Adress _adress){
 
         this.setId(_id);
         this.setStatus(_status);
@@ -34,19 +37,136 @@ public class User extends BaseUser {
 
     }
 
-    /*
-           "id": "_5",
-           "status": "aktivan",
-           "stanje": "4.271,55 HRK",
-           "dob": "33 god",
-           "naziv": "Juliette Lancaster",
-           "spol": "female",
-           "tvrtka": "QUARMONY",
-           "email": "juliettelancaster@quarmony.com",
-           "telefon": "+385 (809) 531-2704",
-           "adresa": "339 Coffey Street, Neahkahnie, Virginia, 8640"
-         */
-    @Override
+    public boolean insertKeyValue(String key, String value){
+        switch (key){
+            case "id":
+                try {
+                    this.setId(Integer.parseInt(value));
+                }catch (Exception ex){
+                    System.out.println("Error in parse " + key);
+                    System.out.println(ex.toString());
+                    return false;
+                }
+                break;
+            case "dob":
+                try {
+                    String[] parts = value.split(" ");
+                    this.setAge(new Age(Integer.parseInt(parts[0]), parts[1]));
+                }catch (Exception ex){
+                    System.out.println("Error in parse " + key);
+                    System.out.println(ex.toString());
+                    return false;
+                }
+                break;
+            case "stanje":
+                try {
+
+                    //this.setFinancialStatus(new Account(locale, Double.parseDouble(value)));
+                }catch (Exception ex){
+                    System.out.println("Error in parse " + key);
+                    System.out.println(ex.toString());
+                    return false;
+                }
+                break;
+            case "status":
+                try {
+                    Status status = Status.IDLE;
+                    if(value == "aktivan"){
+                        status = Status.ACTIVE;
+                    }else if(value == "ne aktivan"){
+                        status = Status.NOACTIVE;
+                    }else {
+                        status = Status.IDLE;
+                    }
+                    this.setStatus(status);
+                }catch (Exception ex){
+                    System.out.println("Error in parse " + key);
+                    System.out.println(ex.toString());
+                    return false;
+                }
+                break;
+            case "naziv":
+                String[] parts = value.split(" ");
+                try {
+                    this.setNameAndSurName(new Name(parts[0], parts[1], parts[2]));
+                }catch (Exception ex){
+                    try {
+                        this.setNameAndSurName(new Name(parts[0], "", parts[1]));
+                    }catch (Exception exs){
+                        System.out.println("Error in parse " + key);
+                        System.out.println(ex.toString());
+                        return false;
+                    }
+                }
+                break;
+            case "spol":
+                try {
+                    Gender gender = Gender.NONE;
+                    if(value == "male"){
+                        gender = Gender.MALE;
+                    }else if(value == "female"){
+                        gender = Gender.FEMALE;
+                    }else {
+                        gender = Gender.NONE;
+                    }
+                    this.setGender(gender);
+                }catch (Exception ex){
+                    System.out.println("Error in parse " + key);
+                    System.out.println(ex.toString());
+                    return false;
+                }
+                break;
+            case "tvrtka":
+                try {
+                    this.setCompanyName(value);
+                }catch (Exception ex){
+                    System.out.println("Error in parse " + key);
+                    System.out.println(ex.toString());
+                    return false;
+                }
+                break;
+            case "email":
+                try {
+                    this.seteMailAdress(value);
+                }catch (Exception ex){
+                    System.out.println("Error in parse " + key);
+                    System.out.println(ex.toString());
+                    return false;
+                }
+                break;
+            case "telefon":
+                try {
+                    this.setTelephoneNumber(value);
+                }catch (Exception ex){
+                    System.out.println("Error in parse " + key);
+                    System.out.println(ex.toString());
+                    return false;
+                }
+                break;
+            case "adresa":
+                try {
+                    String[] adressValue = value.split(",");
+                    Adress adress = new Adress();
+                    adress.setStreet(adressValue[0]);
+                    adress.setCity(adressValue[1]);
+                    adress.setState(adressValue[2]);
+                    adress.setZipCode(adressValue[3]);
+
+                    this.setAdress(adress);
+                }catch (Exception ex){
+                    System.out.println("Error in parse " + key);
+                    System.out.println(ex.toString());
+                    return false;
+                }
+
+                break;
+
+        }
+
+        return true;
+    }
+
+     @Override
     public String toString(){
         StringBuilder stringBuilder = new StringBuilder();
         String extraSpace = " ";
@@ -55,7 +175,7 @@ public class User extends BaseUser {
         stringBuilder.append("id:" + extraSpace + getId() + eolStr);
         stringBuilder.append("status:" + extraSpace + getStatus().getValue() + eolStr);
         stringBuilder.append("stanje:" + extraSpace + getFinancialStatus().toString() + eolStr);
-        stringBuilder.append("dob:" + extraSpace + getAge() + eolStr);
+        stringBuilder.append("dob:" + extraSpace + getAge().toString() + eolStr);
         stringBuilder.append("naziv:" + extraSpace + getNameAndSurName().toString() + eolStr);
         stringBuilder.append("spol:" + extraSpace + getGender().getValue() + eolStr);
         stringBuilder.append("tvrtka:" + extraSpace + getCompanyName() + eolStr);

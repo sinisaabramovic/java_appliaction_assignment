@@ -1,4 +1,6 @@
-package User;
+package User.UserSubClass;
+
+import User.User;
 
 public class Adress {
     private String street;
@@ -6,7 +8,7 @@ public class Adress {
     private String state;
     private String zipCode;
 
-    Adress(){
+    public Adress(){
         this.street = "";
         this.city = "";
         this.state = "";
