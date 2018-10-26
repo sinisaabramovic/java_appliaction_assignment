@@ -1,6 +1,9 @@
 package User;
 
-    /*
+import UserEnums.Gender;
+import UserEnums.Status;
+
+/*
        "id": "_5",
        "status": "aktivan",
        "stanje": "4.271,55 HRK",
@@ -15,11 +18,11 @@ package User;
 class BaseUser {
 
     private int id = 0;
-    private int status = 0;
+    private Status status;
     private float financialStatus = 0;
     private int age = 0;
     private String nameAndSurName = "";
-    private Gender gender = Gender.NULL;
+    private Gender gender = Gender.NONE;
     private String companyName = "";
     private String eMailAdress = "";
     private String telephoneNumber = "";
@@ -31,10 +34,10 @@ class BaseUser {
     public void setId(int id) {
             this.id = id;
         }
-    public int getStatus() {
+    public Status getStatus() {
             return status;
         }
-    public void setStatus(int status) {
+    public void setStatus(Status status) {
             this.status = status;
         }
     public float getFinancialStatus() {
